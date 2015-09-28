@@ -1,6 +1,7 @@
 extern crate docopt;
 extern crate rustc_serialize;
 extern crate reuler;
+
 use reuler::problems;
 use docopt::Docopt;
 
@@ -34,6 +35,7 @@ fn main() {
         3 => println!("problem 3 result: {}", problems::problem_3::largest_prime(600851475143).unwrap()),
         4 => println!("problem 4 result: {}", problems::problem_4::largest_pallindrome_product(999, 999)),
         5 => println!("problem 5 result: {}", problems::problem_5::smallest_multiple((1..20).collect::<Vec<usize>>())),
+        6 => println!("problem 6 result: {}", problems::problem_6::diff_sum_of_squares_square_of_sums(101)),
         _ => println!("Problem Not implemented"),
     }
 }
