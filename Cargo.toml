@@ -2,3 +2,7 @@
 name = "reuler"
 version = "0.1.0"
 authors = ["Sergey pilyavskiy <pill.sv0@gmail.com>"]
+
+[dependencies]
+docopt = "*"
+rustc-serialize = "*"
