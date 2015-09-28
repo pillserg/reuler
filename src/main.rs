@@ -10,7 +10,7 @@ Usage:
     reuler [options]
 
 Options: 
-    --help              Show this message
+    --help                              Show this message
     -p <problem>, --problem <problem>   Problem number [default: 0]
 ";
 
