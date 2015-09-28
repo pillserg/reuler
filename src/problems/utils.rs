@@ -23,3 +23,12 @@ pub fn is_pallindrom<T: ToString + One +  Zero>(n: T) -> bool {
     }
     true
 }
+
+pub fn is_divisors(x: usize, divisors: &Vec<usize>) -> bool {
+    for d in divisors.iter() {
+        if x % d != 0 {
+            return false
+        }
+    }
+    true
+}
