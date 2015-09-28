@@ -1,0 +1,3 @@
+# reuler
+
+playing with rust
