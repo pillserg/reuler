@@ -1,10 +1,8 @@
 use problems::utils;
+use problems::primes;
 
-pub fn get_nth_prime(n: usize) -> Option<usize> {
-    println!("generating primes...");
-    let primes = utils::sieve_primes(200000);
-    match primes.get(n-1) {
-        Some(i) => Some(*i),
-        _ => None
-    }
+
+pub fn get_nth_prime(n: usize) -> usize {
+    primes::PrimesGen::new().nth(n-1).unwrap()
+
 }
