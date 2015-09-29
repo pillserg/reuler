@@ -23,6 +23,6 @@ impl Iterator for MyFibs {
 
 pub fn sum_of_even_fibs_under_limit(n: i32) -> i32 {
     let fibs = MyFibs::new(1,1);
-    fibs.take_while(|&el|el < n).filter(|&el|el % 2 == 0).fold(0,|acc, item| acc + item)
+    fibs.take_while(|&el|el < n).filter(|&el|el % 2 == 0).sum()
 }
 

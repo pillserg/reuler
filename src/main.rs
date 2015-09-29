@@ -36,6 +36,7 @@ fn main() {
         4 => println!("problem 4 result: {}", problems::problem_4::largest_pallindrome_product(999, 999)),
         5 => println!("problem 5 result: {}", problems::problem_5::smallest_multiple((1..20).collect::<Vec<usize>>())),
         6 => println!("problem 6 result: {}", problems::problem_6::diff_sum_of_squares_square_of_sums(101)),
+        7 => println!("problem 7 result: {}", problems::problem_7::get_nth_prime(10001).unwrap()),
         _ => println!("Problem Not implemented"),
     }
 }

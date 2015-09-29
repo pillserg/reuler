@@ -2,8 +2,8 @@ use num::bigint::{BigUint, ToBigUint};
 
 // overflows
 pub fn _diff_sum_of_squares_square_of_sums(n: u64) -> u64{
-    let sum_of_squares = (1..n).fold(0, |acc, x| acc + x * x);
-    let sum = (1..n).fold(0, |acc, x| acc + x);
+    let sum_of_squares: u64 = (1..n).sum();
+    let sum: u64 = (1..n).sum();
     sum_of_squares - sum * sum
 }
 
