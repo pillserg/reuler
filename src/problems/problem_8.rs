@@ -22,31 +22,13 @@ static NUM_STR: &'static str = "
 ";
 
 pub fn get_largest_product_in_series(slice_size: usize) -> usize {
-    // lets convert this str to Vec<usize>
-    // string processing in RUST is nasty... 
-    // or maybe i'am just to dumb for it, but still it's nasty
-
-    let v = NUM_STR
-        .lines()
-        .filter(|&x| !x.is_empty())
-        .collect::<Vec<&str>>()
-        .join("")
+    NUM_STR
         .chars()
-        .filter(|&x| x.is_digit(10))
-        .map(|x| x.to_digit(10).unwrap() as usize)
-        .collect::<Vec<usize>>();
-
-    // ok now some nice stuff, vectors slicing is nice 
-    let mut start = 0;
-    let mut end = slice_size;
-    let mut largest_product = 0;
-    while end < v.len() {
-        let product = v[start..end].iter().product::<usize>();
-        if product > largest_product {
-            largest_product = product;
-        }
-        start += 1;
-        end += 1;
-    } 
-    largest_product
+        .filter_map(|x:char|x.to_digit(10))
+        .map(|x| x as usize)
+        .collect::<Vec<_>>()
+        .windows(slice_size)
+        .map(|slice| slice.iter().product())
+        .max()
+        .unwrap()
 }
